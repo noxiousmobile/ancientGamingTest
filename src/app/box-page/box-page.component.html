@@ -1,0 +1,31 @@
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="large" color="#fff" type="ball-scale-multiple" [fullScreen] = "true"></ngx-spinner>
+<div class="navigation-header">
+  <ng-container *ngIf="!this.boxService.isLoggedIn">
+    <button (click)="authenticateUser()" mat-button>Authenticate</button>
+  </ng-container>
+  <ng-container *ngIf="this.boxService.currentUser | async">
+    <p mat-button class="user-info">Hello <span>{{this.boxService.userName}}</span><span>
+        <span class="money-holder"><span>
+          <span>Your ballance: </span>
+            <mat-icon class="icon-header">attach_money</mat-icon>
+          </span>{{this.boxService.amount}}</span></span>
+    </p>
+  </ng-container>
+</div>
+<div class="wrapper">
+  <div *ngFor="let box of boxes" class="box" (click)="openBox(box.node)">
+    <ng-container *ngIf="!pageLoading">
+      <div class="content-image">
+        <img [src]="box.node.iconUrl" alt="boxitem" />
+      </div>
+      <div class="content-description">
+        <p class="name">{{box.node.name}}</p>
+        <p class="cost">
+          <span>
+            <mat-icon class="icon">attach_money</mat-icon>
+          </span><span>{{box.node.cost}}</span>
+        </p>
+      </div>
+    </ng-container>
+  </div>
+</div>

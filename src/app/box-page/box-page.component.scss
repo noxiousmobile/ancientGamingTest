@@ -1,0 +1,109 @@
+$dark-color: #292b2e;
+$white: #fff;
+
+.wrapper {
+  padding-top: 90px !important;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 10px;
+  gap: 25px;
+  grid-auto-rows: 150px;
+
+  .box {
+    background-color: $dark-color;
+    color: $white;
+    border: 1px solid rgb(225 225 225 / 20%);
+    cursor: pointer;
+
+    &:hover {
+      border: 1px solid rgb(225 225 225 / 60%);
+      box-shadow: 0px -1px 30px -17px rgb(199 199 199 / 70%);
+    }
+
+    .content-image {
+      width: 100%;
+      display: block;
+      min-width: 80px;
+      text-align: center;
+    }
+
+    .content-description {
+      display: block;
+      text-align: center;
+
+      .name {
+        font-weight: bold;
+        font-size: 1rem;
+      }
+
+      .cost {
+        color: #999999;
+      }
+
+      .icon {
+        font-size: 16px;
+        margin: 0;
+        width: 15px;
+        vertical-align: sub;
+      }
+    }
+
+    img {
+      width: 100%;
+      max-width: 75px;
+      margin: 0 auto;
+    }
+  }
+}
+
+.navigation-header {
+  height: 30px;
+  width: 100%;
+  border-bottom: 1px solid #000;
+  position: fixed;
+  text-align: right;
+  padding: 20px 0;
+  top: 0;
+  background-color: $dark-color;
+
+  button {
+    color: $white;
+    margin: 0 20px;
+  }
+
+  .user-info {
+    color: $white;
+    font-size: 16px;
+    padding: 10px;
+    margin: 0 20px;
+  }
+
+  .icon-header {
+    font-size: 17px;
+    vertical-align: text-top;
+  }
+
+  .money-holder {
+    background-color: rgb(22, 21, 21);
+    padding: 10px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 12px;
+  }
+}
+
+@media only screen and (max-width: 968px) {
+  .wrapper {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    gap: 25px;
+    grid-auto-rows: 130px;
+
+    img {
+      width: 100%;
+      max-width: 55px !important;
+      margin: 0 auto;
+    }
+  }
+}
